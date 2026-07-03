@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LKM // terminal</title>
+<meta name="description" content="LKM — ECE @ SJTU. Embodied AI & AI4S." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<!-- 首帧防闪烁:在 CSS 生效前就定好主题,避免夜间用户看到白屏闪一下 -->
+<script>
+  document.documentElement.dataset.theme =
+    localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+</script>
+</head>
+<body>
+
+<!-- 背景三层:背景图 / 压暗纱 / 字符云画布 -->
+<div id="bg-image"></div>
+<div id="bg-tint"></div>
+<canvas id="ascii"></canvas>
+
+<!-- ===== 顶栏 ===== -->
+<header class="topbar">
+  <div class="wrap">
+    <span class="brand">LKM<span class="blink">_</span></span>
+    <nav class="nav">
+      <a href="#about" data-en="about" data-zh="关于"></a>
+      <a href="#skills" data-en="skills" data-zh="技能"></a>
+      <a href="#projects" data-en="projects" data-zh="项目"></a>
+      <a href="#contact" data-en="contact" data-zh="联系"></a>
+      <button class="ctrl-btn" id="themeBtn" title="theme">☀</button>
+      <button class="ctrl-btn" id="langBtn">中文</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ===== Hero / 关于 ===== -->
+  <section class="hero" id="about">
+    <div>
+      <h1>LKM</h1>
+      <p class="sub" data-en="// Embodied AI · AI for Science"
+                     data-zh="// 具身智能 · AI for Science"></p>
+    </div>
+    <div class="term">
+      <div class="term-head">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="term-title">lkm@sjtu: ~/whoami</span>
+      </div>
+      <div class="term-body">
+        <p><span class="prompt"></span><span class="cmd">whoami</span></p>
+        <p class="typed" id="typed"></p>
+        <p style="margin-top:12px"
+           data-en="Freshman in Electronic &amp; Computer Engineering at Shanghai Jiao Tong University. Interested in embodied intelligence and AI for Science."
+           data-zh="上海交通大学 电子与计算机工程 大一在读。对具身智能与 AI for Science 方向感兴趣。"></p>
+        <div class="tags">
+          <span class="tag on">Python</span>
+          <span class="tag on">C / C++</span>
+          <span class="tag on">MATLAB</span>
+          <span class="tag" data-en="Embodied AI" data-zh="具身智能"></span>
+          <span class="tag" data-en="AI4S" data-zh="AI4S"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 技能 ===== -->
+  <section id="skills">
+    <h2 class="sec" data-en="skills" data-zh="技能"></h2>
+    <div class="term">
+      <div class="term-head">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="term-title">~/skills</span>
+      </div>
+      <div class="term-body" id="skillBox">
+        <div class="skill-row" data-pct="80">
+          <div class="label"><span>Python</span><span class="pct">80%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="skill-row" data-pct="70">
+          <div class="label"><span>C / C++</span><span class="pct">70%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="skill-row" data-pct="65">
+          <div class="label"><span>MATLAB</span><span class="pct">65%</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <p class="hint" style="margin-top:8px"
+           data-en="// edit percentages in index.html anytime"
+           data-zh="// 百分比可随时在 index.html 中修改"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 项目 ===== -->
+  <section id="projects">
+    <h2 class="sec" data-en="projects" data-zh="项目"></h2>
+    <div class="grid">
+      <div class="proj">
+        <span class="pt" data-en="Project slot #1" data-zh="项目位 #1"></span>
+        <span class="pd" data-en="Short description goes here. Replace with your work."
+                         data-zh="在此填写简介，替换为你的作品。"></span>
+        <span class="pl"><a href="#" data-en="→ repo / link" data-zh="→ 仓库 / 链接"></a></span>
+      </div>
+      <div class="proj">
+        <span class="pt" data-en="Project slot #2" data-zh="项目位 #2"></span>
+        <span class="pd" data-en="Short description goes here. Replace with your work."
+                         data-zh="在此填写简介，替换为你的作品。"></span>
+        <span class="pl"><a href="#" data-en="→ repo / link" data-zh="→ 仓库 / 链接"></a></span>
+      </div>
+      <div class="proj">
+        <span class="pt" data-en="Project slot #3" data-zh="项目位 #3"></span>
+        <span class="pd" data-en="Short description goes here. Replace with your work."
+                         data-zh="在此填写简介，替换为你的作品。"></span>
+        <span class="pl"><a href="#" data-en="→ repo / link" data-zh="→ 仓库 / 链接"></a></span>
+      </div>
+      <div class="proj add" data-en="+ add more in index.html" data-zh="+ 在 index.html 中继续添加"></div>
+    </div>
+  </section>
+
+  <!-- ===== 联系 ===== -->
+  <section id="contact">
+    <h2 class="sec" data-en="contact" data-zh="联系"></h2>
+    <div class="term">
+      <div class="term-head">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="term-title">~/contact</span>
+      </div>
+      <div class="term-body">
+        <p><span class="prompt"></span><span class="cmd">cat contact.txt</span></p>
+        <div class="links">
+          <a href="mailto:lkm070810@sjtu.edu.cn">✉ lkm070810@sjtu.edu.cn</a>
+          <a href="https://github.com/KimonLu" target="_blank" rel="noopener">⌥ github.com/KimonLu</a>
+          <a href="#" target="_blank" rel="noopener" data-en="+ social slot" data-zh="+ 社交链接位"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span data-en="built in the terminal · " data-zh="构建于终端 · "></span>© 2026 LKM
+</footer>
+
+<!-- ===== Clawd 桌宠(SVG 由 JS 注入 Shadow DOM)===== -->
+<div id="clawd" title="Clawd"></div>
+<div id="bubble"></div>
+<div id="clawd-mini" title="?"></div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
