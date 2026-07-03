@@ -195,6 +195,49 @@ h2.sec::before{content:"// ";color:var(--green-dim)}
 .proj .pl{font-size:12px}
 .proj.add{align-items:center;justify-content:center;color:var(--muted);border-style:dashed;min-height:120px}
 
+/* ============ 9.5 技术博客 ============ */
+/* 首页文章卡片:复用 .proj 外观,整卡可点 */
+a.proj{color:inherit}
+a.proj:hover{text-shadow:none}
+.proj .post-date{font-size:11px;color:var(--muted)}
+
+/* 阅读页(blog.html)标题区 */
+.post-title{font-size:24px;color:var(--green);line-height:1.3;margin-bottom:4px}
+.post-date{font-size:12px;color:var(--muted);margin-bottom:18px}
+
+/* Markdown 正文排版 */
+.md-body{font-size:14px}
+.md-body h1,.md-body h2,.md-body h3,.md-body h4{
+  color:var(--cyan);margin:26px 0 10px;line-height:1.35;
+}
+.md-body h1{font-size:22px}
+.md-body h2{font-size:18px}
+.md-body h2::before{content:"## ";color:var(--green-dim)}
+.md-body h3{font-size:15px}
+.md-body h3::before{content:"### ";color:var(--green-dim)}
+.md-body p{margin:10px 0}
+.md-body ul,.md-body ol{margin:10px 0;padding-left:24px}
+.md-body li{margin:4px 0}
+.md-body code{
+  background:rgba(127,127,127,0.14);border-radius:4px;padding:1px 6px;
+  font-size:13px;color:var(--amber);
+}
+.md-body pre{
+  background:var(--panel-solid);border:1px solid var(--border);border-radius:8px;
+  padding:14px 16px;margin:14px 0;overflow-x:auto;
+}
+.md-body pre code{background:none;padding:0;color:var(--text)}
+.md-body blockquote{
+  border-left:3px solid var(--green-dim);margin:14px 0;padding:4px 14px;
+  color:var(--muted);
+}
+.md-body table{border-collapse:collapse;margin:14px 0;width:100%;font-size:13px}
+.md-body th,.md-body td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.md-body th{color:var(--green);background:rgba(127,127,127,0.06)}
+.md-body img{max-width:100%;border-radius:8px}
+.md-body hr{border:none;border-top:1px dashed var(--border);margin:22px 0}
+.md-body a{word-break:break-all}
+
 /* ============ 10. 联系方式 ============ */
 .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
 .links a{
