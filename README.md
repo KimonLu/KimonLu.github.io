@@ -15,6 +15,8 @@
 - **中英双语**:一键切换,文案写在 `data-en` / `data-zh` 属性里
 - **静态博客**:Markdown 写作 + front matter 元信息,首页卡片自动生成,
   阅读页用 [marked](https://github.com/markedjs/marked) 渲染(CDN 失败自动降级纯文本)
+- **留言板**:基于 [giscus](https://giscus.app),留言存进仓库 Discussions,
+  GitHub 账号登录即可留言,深浅色与语言跟随站点切换
 
 ## 🚀 本地运行
 

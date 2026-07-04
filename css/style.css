@@ -238,6 +238,13 @@ a.proj:hover{text-shadow:none}
 .md-body hr{border:none;border-top:1px dashed var(--border);margin:22px 0}
 .md-body a{word-break:break-all}
 
+/* ============ 9.8 留言板(giscus) ============ */
+.giscus{width:100%}
+.gb-hint{
+  color:var(--muted);font-size:13px;line-height:1.8;
+  border:1px dashed var(--border);border-radius:8px;padding:14px 16px;
+}
+
 /* ============ 10. 联系方式 ============ */
 .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
 .links a{
