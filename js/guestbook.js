@@ -18,9 +18,9 @@ import { getLang }  from './i18n.js';
 /* ---------- giscus 配置(从 giscus.app 生成的代码里抄) ---------- */
 const GISCUS = {
   repo:       'KimonLu/KimonLu.github.io',
-  repoId:     '',                // ★ 待填:data-repo-id
+  repoId:     'R_kgDOTDa5Uw',                // ★ 待填:data-repo-id
   category:   'Announcements',   // Discussions 分类名(建议选"仅维护者可发起"的分类)
-  categoryId: '',                // ★ 待填:data-category-id
+  categoryId: 'DIC_kwDOTDa5U84DAiAs',                // ★ 待填:data-category-id
   term:       'guestbook',       // 所有留言挂在这一个固定的 discussion 下
 };
 
